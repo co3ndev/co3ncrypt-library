@@ -1,15 +1,22 @@
 #pragma once
-#include <iostream>
+#include <string>
 
-// Returns the version of the co3ncrypt library.
-char const* co3ncrypt_version() {
-    return "co3ncrypt v0.0.1";
+// Build info
+const std::string co3ncrypt_version_date = "2025-12-15";
+const std::string co3ncrypt_version_number = "0.0.1";
+
+class co3ncrypt {
+private:
+    int encryption_key = 0;
+
+public:
+    bool is_encrypted = false;
+
+    // Prints log message to console
+    void log_message(const std::string& message);
+
+    void generate_key(int key_size, bool logging_enabled);
+    
+    std::string encrypt(const std::string& data);
+    std::string decrypt(const std::string& data);
 };
-
-// Returns the build date of the co3ncrypt library.
-char const* co3ncrypt_build_date() {
-    return "co3ncrypt build: Dec 15 2025";
-};
-
-// Logging function declaration
-void logMessage(const std::string& message);
