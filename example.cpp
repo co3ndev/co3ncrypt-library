@@ -3,7 +3,5 @@
 co3ncrypt cc;
 
 int main(){
-    cc.generate_key(256, true, true);
-    std::cout << "Encryption Key: " << cc.encryption_key << std::endl;
-    return 0;
+    cc.generate_key(256, 1, 0);
 }
